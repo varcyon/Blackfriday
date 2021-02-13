@@ -10,6 +10,7 @@ public class DisplayScore : MonoBehaviour
 
     private void Start() {
         shoppingCart.costTotal = 0;
+        shoppingCart.cart = new List<Item>();
     }
     void Update()
     {

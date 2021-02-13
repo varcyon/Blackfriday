@@ -12,9 +12,10 @@ public class Pickup : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = item.itemSprite;
     }
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log(other.name);
         if (other.CompareTag("Player")) {
-            shoppingCart.costTotal += item.price;
+            //shoppingCart.costTotal += item.price;
+            shoppingCart.cart.Add(item);
+            shoppingCart.CalculateTotal();
         }
         Destroy(this.gameObject);
         
